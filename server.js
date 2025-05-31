@@ -1,0 +1,30 @@
+console.log("Web Serverni boshlash");
+const express = require('express');
+const app = express();
+const http = require('http');
+
+// 1: kirish code lar
+app.use(express.static("public"));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
+// 2: session code
+// 3: views code
+app.set("views", "views");
+app.set("view engine", "ejs");
+
+// 4: routing code
+app.get('/hello', function (req, res) {
+    res.end('<h1>HELLO WORLD by Dostonbek</>');
+});
+
+app.get("/gift", function (req, res) {
+    res.end("<h1>siz sovg'alar bo'limidasiz</>");
+});
+
+const server = http.createServer(app);
+let PORT = 3000;
+server.listen(PORT, function () {
+    console.log(`The server is running successfully on port: ${PORT}`);
+});
+
