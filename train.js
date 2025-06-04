@@ -66,12 +66,12 @@ return new Promise((resolve, reject) => {
 
 
 // call via async/await
-// async function run() {
-//     let javob = await maslahatBering(20);
-//     console.log(javob);
-//     javob = await maslahatBering(67);
-//     console.log(javob);
-//     javob = await maslahatBering(41);
-//     console.log(javob);
-// }
-// run(); git
+async function run() {
+    let javob = await maslahatBering(20);
+    console.log(javob);
+    javob = await maslahatBering(67);
+    console.log(javob);
+    javob = await maslahatBering(41);
+    console.log(javob);
+}
+run(); git
