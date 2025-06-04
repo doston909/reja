@@ -31,17 +31,14 @@ app.post("/create-item", (req, res) => {
 });
 
 app.get('/author', (req, res) => {
-    res.render("author", )
+    res.render("author", {user: user});
 })
 app.get('/', function (req, res) {
     res.render("harid");
 });
 
 const server = http.createServer(app);
-let PORT = 3000;
+let PORT = 3001;
 server.listen(PORT, function () {
     console.log(`The server is running successfully on port: ${PORT}`);
 });
-
-
-
