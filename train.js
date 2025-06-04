@@ -74,4 +74,4 @@ return new Promise((resolve, reject) => {
 //     javob = await maslahatBering(41);
 //     console.log(javob);
 // }
-// run(); 
+// run(); git
