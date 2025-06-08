@@ -1,5 +1,19 @@
-// A-TASK
+// B-TASK 
 
+function sonlarniChiqar(matn) {
+  let sonlar = 0;
+  for ( let i = 0; i < matn.length; i++) {
+    if ( matn[i] == '0' || matn[i] == '1' || matn[i] == '2'|| matn[i] == '3'||   matn[i] == '4' || matn[i] == '5' || matn[i] == '6' || matn[i] == '7' || 
+       matn[i] == '8' || matn[i] == '9' ) {
+       sonlar++;
+    }
+  }
+  console.log(sonlar);
+}
+
+sonlarniChiqar('some1every12sofj8fjefr44fnn45bf64njk65');
+
+// A-TASK
 // bu function orqali biz istalgan so'z yozib, uning ichidagi istalgan harf necha martta qatnashganligini bilib olamiz
 
 function harfTop(harf, matn) {
