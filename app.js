@@ -27,17 +27,32 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 // 4: routing code
-
 app.post("/create-item", (req, res) => {
-    console.log(req.body);    // bu qator form yoki post orqali "/create-item" ga data yuborsak uni terminalga chiqaradi
-    res.json({ test: "success "}); // bu yerda clientdan kelgan so'rovga javob beriladi, agar bu qator yozilmasa brouser kutaveradi
+    console.log('user entered /create-item');
+    const new_reja = req.body.reja;   // bu qator form yoki post orqali "/create-item" ga data yuborsak uni terminalga chiqaradi
+    db.collection('plans').insertOne({reja: new_reja}, (err, data) => {
+        if(err) {
+            console.log(err);
+            res.send('something went wrong');
+        } else {
+            res.send('successfully added'); // bu yerda clientdan kelgan so'rovga javob beriladi, agar bu qator yozilmasa brouser kutaveradi
+        }
+    }); 
 });
 
 app.get('/author', (req, res) => {
     res.render("author", {user: user});
 })
 app.get('/', function (req, res) {
-    res.render("reja");
+    console.log('user entered /');
+    db.collection("plans").find().toArray((err, data) => {
+        if(err) {
+            console.log(err);
+            res.end('something went wrong');
+        } else {
+            res.render("reja", { items: data });
+        }
+    });
 });
 
 module.exports = app;
