@@ -4,8 +4,9 @@ const mongodb = require('mongodb');
 let db;
 const connectionString = "mongodb+srv://dostonbek:GoQ7IOC06rcW55L1@cluster0.vtafco5.mongodb.net/Reja"
 
-mongodb.connect(connectionString, {useNewUrlParser: true,
-     useUnifiedTopology: true,
+mongodb.connect(connectionString, {
+    useNewUrlParser: true,  // bu ikkalasi mongoni yangi versionlar bilan bir hil ishlashi uchun yozilishi kerak
+    useUnifiedTopology: true,
     }, 
     (err, client) => {
         if(err) console.log("ERROR on connecting MongoDB");
@@ -14,7 +15,7 @@ mongodb.connect(connectionString, {useNewUrlParser: true,
            module.exports = client;
             const app = require('./app');
             const server = http.createServer(app);
-            let PORT = 3001;
+            let PORT = 3000;
             server.listen(PORT, function () {
               console.log(`The server is running successfully on port: ${PORT}, http://localhost:${PORT}`
               );

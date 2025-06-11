@@ -1,6 +1,6 @@
 console.log("Web Serverni boshlash");
 const express = require('express');
-const app = express();
+const app = express(); // backend qurish uchun ishlatamiz
 const fs = require('fs');
 
 
@@ -27,9 +27,9 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 // 4: routing code
-app.post("/create-item", (req, res) => {
+app.post("/create-item", (req, res) => {        // bu qator form yoki post orqali "/create-item" ga data yuborsak uni terminalga chiqaradi
     console.log('user entered /create-item');
-    const new_reja = req.body.reja;   // bu qator form yoki post orqali "/create-item" ga data yuborsak uni terminalga chiqaradi
+    const new_reja = req.body.reja;   
     db.collection('plans').insertOne({reja: new_reja}, (err, data) => {
         if(err) {
             console.log(err);

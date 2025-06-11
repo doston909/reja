@@ -1,33 +1,49 @@
-// B-TASK 
+// C-TASK
 
-function sonlarniChiqar(matn) {
-  let sonlar = 0;
-  for ( let i = 0; i < matn.length; i++) {
-    if ( matn[i] == '0' || matn[i] == '1' || matn[i] == '2'|| matn[i] == '3'||   matn[i] == '4' || matn[i] == '5' || matn[i] == '6' || matn[i] == '7' || 
-       matn[i] == '8' || matn[i] == '9' ) {
-       sonlar++;
-    }
-  }
-  console.log(sonlar);
+function checkContent(matn1, matn2) {
+  if (matn1.length !== matn2.length) return false;
+
+  let ajrat1 = matn1.split('').sort().join('');
+  let ajrat2 = matn2.split('').sort().join('');
+
+  return ajrat1 === ajrat2;
 }
 
-sonlarniChiqar('some1every12sofj8fjefr44fnn45bf64njk65');
+console.log(checkContent('osmon', 'mon')); 
+
+
+
+// B-TASK 
+
+// function sonlarniChiqar(matn) {
+//   let sonlar = 0;
+//   for ( let i = 0; i < matn.length; i++) {
+//     if ( matn[i] == '0' || matn[i] == '1' || matn[i] == '2'|| matn[i] == '3'||  
+//        matn[i] == '4' || matn[i] == '5' || matn[i] == '6' || matn[i] == '7' || 
+//        matn[i] == '8' || matn[i] == '9' ) {
+//        sonlar++;
+//     }
+//   }
+//   console.log(sonlar);
+// }
+
+// sonlarniChiqar('some1every12sofj8fjefr44fnn45bf64njk65');
 
 // A-TASK
 // bu function orqali biz istalgan so'z yozib, uning ichidagi istalgan harf necha martta qatnashganligini bilib olamiz
 
-function harfTop(harf, matn) {
-    let sanoq = 0;                          // metn ichidagi xarf sonini hisoblaydi
-    for(let i = 0; i < matn.length; i++) {  // bu matn indexiga alohida kirib tekshiradi
-      if (matn[i] === harf) {               // agar index xarfga mos kelsa uni sanoqqa yuboradi
-        sanoq++;
-      }
-    }
-    console.log(` "${matn}" matni ichida ${harf} harfi ${sanoq} martta qatnashgan`); // bu yerda return qilib ham bersa bo'ladi
-}
+// function harfTop(harf, matn) {
+//     let sanoq = 0;                          // metn ichidagi xarf sonini hisoblaydi
+//     for(let i = 0; i < matn.length; i++) {  // bu matn indexiga alohida kirib tekshiradi
+//       if (matn[i] === harf) {               // agar index xarfga mos kelsa uni sanoqqa yuboradi
+//         sanoq++;
+//       }
+//     }
+//     console.log(` "${matn}" matni ichida ${harf} harfi ${sanoq} martta qatnashgan`); // bu yerda return qilib ham bersa bo'ladi
+// }
 
-harfTop('e', 'engineer'); // agar function ichida faqat return berilsa bu yerda console.log bilan call qilish kerak
-harfTop('d', 'dalalarda');
+// harfTop('e', 'engineer'); // agar function ichida faqat return berilsa bu yerda console.log bilan call qilish kerak
+// harfTop('d', 'dalalarda');
 
 
 
