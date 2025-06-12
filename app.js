@@ -31,12 +31,8 @@ app.post("/create-item", (req, res) => {        // bu qator form yoki post orqal
     console.log('user entered /create-item');
     const new_reja = req.body.reja;   
     db.collection('plans').insertOne({reja: new_reja}, (err, data) => {
-        if(err) {
-            console.log(err);
-            res.send('something went wrong');
-        } else {
-            res.send('successfully added'); // bu yerda clientdan kelgan so'rovga javob beriladi, agar bu qator yozilmasa brouser kutaveradi
-        }
+        console.log(data.ops);
+        res.json(data.ops[0]);
     }); 
 });
 
