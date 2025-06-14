@@ -1,15 +1,53 @@
-// C-TASK
+// D-TASK
 
-function checkContent(matn1, matn2) {
-  if (matn1.length !== matn2.length) return false;
+class Shop {
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
+  }
+  vaqt() {
+    const now = new Date();
+    const soat = String(now.getHours()).padStart(2, '0');
+    const minut = String(now.getMinutes()).padStart(2, '0');
+    const soniya = String(now.getSeconds()).padStart(2, '0');
+    return `${soat}:${minut}:${soniya}`;
+  }
+  
+  qoldiq() {
+    console.log(`Hozir soat ${this.vaqt()} da ${this.non} dona non, ${this.lagmon} dona lag'mon va ${this.cola} dona cola mavjud`);
+  }
 
-  let ajrat1 = matn1.split('').sort().join('');
-  let ajrat2 = matn2.split('').sort().join('');
+  sotish(nomi, a) {
+    this.non = this.non -= a;
+    // console.log(`sizda ${this.non} dona non qoldi `);
+  }
 
-  return ajrat1 === ajrat2;
+  qabul(nomi, b) {
+    this.cola = this.cola += b;
+    // console.log(`sizda hozir ${this.cola} mavjud`);
+  }
 }
 
-console.log(checkContent('osmon', 'mon')); 
+const shop = new Shop(4, 5, 2);
+shop.qoldiq();
+shop.sotish('non', 3);
+shop.qabul('cola', 4);
+shop.qoldiq();
+
+
+// C-TASK
+
+// function checkContent(matn1, matn2) {
+//   if (matn1.length !== matn2.length) return false;
+
+//   let ajrat1 = matn1.split('').sort().join('');
+//   let ajrat2 = matn2.split('').sort().join('');
+
+//   return ajrat1 === ajrat2;
+// }
+
+// console.log(checkContent('osmon', 'mons')); 
 
 
 
