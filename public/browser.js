@@ -1,4 +1,3 @@
-const { response } = require("../app");
 
 console.log('FrontEnd JS ishga tuhsdi');
 
