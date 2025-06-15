@@ -1,39 +1,51 @@
+// E-TASK
+
+function teskariYoz(soz) {
+  const teskari = soz.split('').reverse().join(''); // split-harflarga ajratadi; reverse-arrayni teskari yozadi; join-arrayni stringa aylantiradi
+  console.log(teskari);
+}
+teskariYoz('alla');
+
+
+
+
+
 // D-TASK
 
-class Shop {
-  constructor(non, lagmon, cola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.cola = cola;
-  }
-  vaqt() {
-    const now = new Date();
-    const soat = String(now.getHours()).padStart(2, '0');
-    const minut = String(now.getMinutes()).padStart(2, '0');
-    const soniya = String(now.getSeconds()).padStart(2, '0');
-    return `${soat}:${minut}:${soniya}`;
-  }
+// class Shop {
+//   constructor(non, lagmon, cola) {
+//     this.non = non;
+//     this.lagmon = lagmon;
+//     this.cola = cola;
+//   }
+//   vaqt() {
+//     const now = new Date();
+//     const soat = String(now.getHours()).padStart(2, '0');
+//     const minut = String(now.getMinutes()).padStart(2, '0');
+//     const soniya = String(now.getSeconds()).padStart(2, '0');
+//     return `${soat}:${minut}:${soniya}`;
+//   }
   
-  qoldiq() {
-    console.log(`Hozir soat ${this.vaqt()} da ${this.non} dona non, ${this.lagmon} dona lag'mon va ${this.cola} dona cola mavjud`);
-  }
+//   qoldiq() {
+//     console.log(`Hozir soat ${this.vaqt()} da ${this.non} dona non, ${this.lagmon} dona lag'mon va ${this.cola} dona cola mavjud`);
+//   }
 
-  sotish(nomi, a) {
-    this.non = this.non -= a;
-    // console.log(`sizda ${this.non} dona non qoldi `);
-  }
+//   sotish(nomi, a) {
+//     this.non = this.non -= a;
+//     // console.log(`sizda ${this.non} dona non qoldi `);
+//   }
 
-  qabul(nomi, b) {
-    this.cola = this.cola += b;
-    // console.log(`sizda hozir ${this.cola} mavjud`);
-  }
-}
+//   qabul(nomi, b) {
+//     this.cola = this.cola += b;
+//     // console.log(`sizda hozir ${this.cola} mavjud`);
+//   }
+// }
 
-const shop = new Shop(4, 5, 2);
-shop.qoldiq();
-shop.sotish('non', 3);
-shop.qabul('cola', 4);
-shop.qoldiq();
+// const shop = new Shop(4, 5, 2);
+// shop.qoldiq();
+// shop.sotish('non', 3);
+// shop.qabul('cola', 4);
+// shop.qoldiq();
 
 
 // C-TASK
