@@ -1,10 +1,25 @@
+function izla(soz1) {
+  const sozlar = soz1.split(''); 
+
+  for (let i = 0; i < sozlar.length - 1; i++) {
+    if (sozlar[i] === sozlar[i + 1]) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+console.log(izla('assalom'));
+
+
 // E-TASK
 
-function teskariYoz(soz) {
-  const teskari = soz.split('').reverse().join(''); // split-harflarga ajratadi; reverse-arrayni teskari yozadi; join-arrayni stringa aylantiradi
-  console.log(teskari);
-}
-teskariYoz('alla');
+// function teskariYoz(soz) {
+//   const teskari = soz.split('').reverse().join(''); // split-harflarga ajratadi; reverse-arrayni teskari yozadi; join-arrayni stringa aylantiradi
+//   console.log(teskari);
+// }
+// teskariYoz('Sadiya');
 
 
 
