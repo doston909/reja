@@ -1,3 +1,5 @@
+// F-TASK
+
 function izla(soz1) {
   const sozlar = soz1.split(''); 
 
